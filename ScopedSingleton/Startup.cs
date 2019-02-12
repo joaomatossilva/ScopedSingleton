@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -25,7 +26,17 @@ namespace ScopedSingleton
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services
+                .AddScoped<ScopedObjectRequestFilter>()
+                .AddSingleton<IHttpContextAccessor, HttpContextAccessor>()
+                .AddSingleton<SingletonService>();
+
+            services.AddMvc(config =>
+            {
+                config
+                    .Filters.Add(new ServiceFilterAttribute(typeof(ScopedObjectRequestFilter)));
+
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

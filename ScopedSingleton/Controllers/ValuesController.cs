@@ -10,11 +10,27 @@ namespace ScopedSingleton.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly SingletonService _singletonService;
+
+        public ValuesController(SingletonService singletonService)
+        {
+            _singletonService = singletonService;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var obj1 = _singletonService.GetScoped();
+            obj1.Data.Add("value1");
+
+            var obj2 = _singletonService.GetScoped();
+            obj2.Data.Add("value2");
+
+            var obj3 = _singletonService.GetScoped();
+            obj3.Data.Add("value3");
+
+            return obj3.Data.ToArray();
         }
 
         // GET api/values/5
