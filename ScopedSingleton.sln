@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScopedSingleton", "ScopedSingleton\ScopedSingleton.csproj", "{EA38AB81-CE18-44E6-9C20-2B7F5E487FFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA38AB81-CE18-44E6-9C20-2B7F5E487FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA38AB81-CE18-44E6-9C20-2B7F5E487FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA38AB81-CE18-44E6-9C20-2B7F5E487FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA38AB81-CE18-44E6-9C20-2B7F5E487FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8530BDD1-D3FD-4200-97E0-EC23A2E97ACA}
+	EndGlobalSection
+EndGlobal
